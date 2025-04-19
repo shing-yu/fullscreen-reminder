@@ -3,6 +3,7 @@
 好看的全屏提醒工具，可用于定时提醒、喝水、休息等场景。  
 基于PyQt5开发，主要支持Windows平台，其他平台未经测试。  
 可加入Path后被其他程序调用或独立使用。
+![Screenshot](https://raw.githubusercontent.com/shing-yu/fullscreen-reminder/refs/heads/main/screenshot.png)
 
 ## 核心特性
 
