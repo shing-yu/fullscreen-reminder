@@ -1,3 +1,4 @@
+import os
 import sys
 import argparse
 
@@ -22,10 +23,20 @@ class FullScreenReminder(QWidget):
         self.setWindowOpacity(0)  # 初始完全透明
 
     @staticmethod
-    def load_fonts():
+    def get_asset_path(filename):
+        # 获取可执行文件的真实路径
+        exe_path = os.path.realpath(sys.argv[0])
+        # 提取所在目录
+        exe_dir = os.path.dirname(exe_path)
+        # 拼接资源路径
+        return os.path.join(exe_dir, 'assets', filename)
+
+    def load_fonts(self):
         """加载字体"""
-        ali_font = "assets/AlimamaFangYuanTiVF-Thin.ttf"
-        jet_font = "assets/JetBrainsMono-ExtraBold.ttf"
+        # ali_font = "assets/AlimamaFangYuanTiVF-Thin.ttf"
+        # jet_font = "assets/JetBrainsMono-ExtraBold.ttf"
+        ali_font = self.get_asset_path("AlimamaFangYuanTiVF-Thin.ttf")
+        jet_font = self.get_asset_path("JetBrainsMono-ExtraBold.ttf")
         QFontDatabase.addApplicationFont(ali_font)
         QFontDatabase.addApplicationFont(jet_font)
 
