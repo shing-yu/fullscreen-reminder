@@ -1,0 +1,7 @@
+.venv
+*build
+*dist
+*.spec
+.idea
+upx.exe
+note.txt
